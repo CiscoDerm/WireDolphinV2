@@ -1,0 +1,16 @@
+.replay-container {
+    padding: 32px;
+    color: #00ffcc;
+    font-family: monospace;
+  }
+  
+  .terminal-box {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00ffcc;
+    min-height: 200px;
+    font-size: 18px;
+    white-space: pre-wrap;
+  }
+  

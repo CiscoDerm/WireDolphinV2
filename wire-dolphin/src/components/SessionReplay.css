@@ -1,0 +1,28 @@
+.session-replay {
+    padding: 24px;
+    font-family: monospace;
+    color: #00ffcc;
+    background-color: #000;
+    border-radius: 8px;
+    border: 1px solid #00c0ff;
+    margin-top: 24px;
+  }
+  
+  .session-log {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+  }
+  
+  .session-log li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid #00c0ff;
+  }
+  
+  .cmd {
+    color: #ff0055;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  

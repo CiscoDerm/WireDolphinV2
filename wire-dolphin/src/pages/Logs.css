@@ -1,0 +1,70 @@
+.logs-page {
+  padding: 40px 32px;
+  font-family: 'Fira Code', monospace;
+  background-color: #0c0c0c;
+  color: #f1f1f1;
+}
+
+.logs-page h2 {
+  font-size: 22px;
+  color: #ff9100;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #ff910080;
+}
+
+.search-input {
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+  border: 1px solid #ffffff;
+  background-color: #121212;
+  color: #ffffff;
+  width: 340px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #f8f8f8;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #ffffffaa;
+}
+
+.logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 6px #00ffe044;
+  background-color: #141414;
+  margin-top: 16px;
+}
+
+.logs-table th,
+.logs-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  font-size: 13.5px;
+}
+
+.logs-table th {
+  background-color: #1f1f1f;
+  color: #ff9100;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logs-table td {
+  background-color: #181818;
+  color: #eee;
+}
+
+.logs-table tr:hover td {
+  background-color: #222;
+  transition: background 0.2s ease;
+}

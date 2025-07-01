@@ -1,0 +1,110 @@
+.clients-page {
+  padding: 40px 32px;
+  color: #f5f5f5;
+  font-family: 'Fira Code', monospace;
+  background-color: #0a0a0a;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #ff9100;
+  text-shadow: 0 0 4px #ff910088;
+}
+
+.search-input {
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid #ff9100;
+  background-color: #111;
+  color: #ff9100;
+  width: 340px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #ff910088;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #ff9100aa;
+}
+
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 8px #ff910055;
+  background-color: #121212;
+}
+
+.clients-table th,
+.clients-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #222;
+}
+
+.clients-table th {
+  background-color: #181717;
+  color: #ffa726;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.clients-table td {
+  background-color: #181818;
+  font-size: 14px;
+}
+
+.clients-table tr:hover td {
+  background-color: #080808;
+  transition: background 0.2s ease;
+}
+
+.clients-table td button {
+  background-color: #ff9100;
+  color: rgb(238, 238, 238);
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.clients-table td button:hover {
+  background-color: #ff7800;
+  box-shadow: 0 0 6px #ff9100aa;
+}
+
+.replay-wrapper {
+  margin-top: 32px;
+}
+
+.back-button {
+  background-color: transparent;
+  color: #ffa726;
+  border: 2px solid #ffa726;
+  font-family: 'Fira Code', monospace;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 28px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #ff910022;
+  color: #ffffff;
+  border-color: #ff9100;
+  text-shadow: 0 0 6px #ff9100;
+}

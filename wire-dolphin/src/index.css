@@ -1,0 +1,141 @@
+@import "leaflet/dist/leaflet.css";
+
+/* 🌑 Reset + base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background-color: #0d0d0d;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🌐 Container principal */
+.main-container {
+  padding: 24px;
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 16px 32px;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px #ff6f0033;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  color: #ff6f00;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+}
+
+/* 🔗 Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  position: relative;
+  color: #eee;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff9100;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffaa00;
+  border-radius: 1px;
+}
+
+/* 🔐 Bouton Logout */
+.logout-button {
+  background: transparent;
+  color: #ff1744;
+  border: 1px solid #ff1744;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff1744;
+  color: white;
+  box-shadow: 0 0 8px #ff1744;
+}
+
+/* 🌙 Mode sombre toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* 🔔 Toast stylé */
+.toast-dark {
+  background-color: #111 !important;
+  color: #fff !important;
+  border-left: 4px solid #f49005;
+  font-family: monospace;
+}
+
+/* ☁️ Dark mode global */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode .card,
+.dark-mode .chart-box,
+.dark-mode .navbar {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+ 

@@ -1,0 +1,66 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+}
+
+.login-form {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  width: 350px;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.login-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 28px;
+  color: #00e6e6;
+  margin-bottom: 20px;
+}
+
+.login-form h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #2e2e2e;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;  /* 🟢 AJOUT essentiel */
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00cfff;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form button:hover {
+  background-color: #00b8e6;
+}
+
+.error-message {
+  margin-top: 15px;
+  color: #ff4d4d;
+}
