@@ -1,107 +1,114 @@
-# 🛡️ Ransomware Simulator - Orange Cyberdefense Training Tool
+# 🖥️ Wire_Dolphin Dashboard - Orange Cyberdefense
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Purpose-Educational%20Only-red?style=for-the-badge" alt="Educational Purpose">
-  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge" alt="Windows Platform">
-  <img src="https://img.shields.io/badge/Language-C-green?style=for-the-badge" alt="C Language">
-  <img src="https://img.shields.io/badge/License-Restricted-orange?style=for-the-badge" alt="Restricted License">
+  <img src="https://img.shields.io/badge/Framework-React.js-61DAFB?style=for-the-badge&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=node.js" alt="Node.js">
+  <img src="https://img.shields.io/badge/WebSocket-Socket.io-010101?style=for-the-badge&logo=socket.io" alt="Socket.io">
+  <img src="https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge" alt="MIT License">
 </p>
 
 <p align="center">
-  <strong>⚠️ AVERTISSEMENT LÉGAL ⚠️</strong><br>
-  Ce simulateur est développé exclusivement pour les formations en cybersécurité d'Orange Cyberdefense.<br>
-  <strong>Toute utilisation malveillante est strictement interdite et illégale.</strong>
+  <strong>Dashboard de supervision en temps réel pour le simulateur de ransomware</strong><br>
+  Développé par les étudiants de 2ème année Bachelor ISEN pour Orange Cyberdefense
 </p>
 
 ---
 
 ## 📋 Table des matières
 
-- [À propos](#-à-propos)
+- [Vue d'ensemble](#-vue-densemble)
 - [Fonctionnalités](#-fonctionnalités)
-- [Architecture](#-architecture)
+- [Architecture technique](#-architecture-technique)
 - [Installation](#-installation)
+- [Configuration](#-configuration)
 - [Utilisation](#-utilisation)
-- [Intégration Orange Cyberdefense](#-intégration-orange-cyberdefense)
+- [API Endpoints](#-api-endpoints)
 - [Sécurité](#-sécurité)
-- [FAQ](#-faq)
+- [Développement](#-développement)
 
 ---
 
-## 🎯 À propos
+## 🎯 Vue d'ensemble
 
-Le **Ransomware Simulator** est un outil pédagogique développé par Orange Cyberdefense pour former les professionnels de la cybersécurité à la détection, l'analyse et la réponse aux attaques par ransomware. Ce simulateur reproduit fidèlement le comportement visuel et certaines fonctionnalités d'un vrai ransomware, sans causer aucun dommage réel.
+**Wire_Dolphin Dashboard** est une interface de supervision conçue pour centraliser et visualiser en temps réel les données collectées par le simulateur de ransomware. Il fait partie intégrante du projet WireDolphinV2 développé dans le cadre des formations Orange Cyberdefense.
 
-### Objectifs pédagogiques
+### Objectifs principaux
 
-- 🔍 **Comprendre** les mécanismes internes d'un ransomware
-- 🚨 **Identifier** les indicateurs de compromission (IoC)
-- 🛡️ **Développer** des stratégies de détection efficaces
-- 🚀 **Pratiquer** la réponse à incidents en temps réel
-- 📚 **Sensibiliser** aux impacts d'une attaque ransomware
+- 📊 **Centralisation** des données récoltées par les malwares simulés
+- 👁️ **Visualisation en temps réel** des attaques et comportements
+- 📈 **Analyse rapide** des victimes et de leurs actions
+- 🎮 **Faciliter le pilotage** cyber et la prise de décision
 
 ---
 
 ## ✨ Fonctionnalités
 
-### 🖥️ Interface Utilisateur
+### 📊 Tableau de bord principal
 
-- **Mode plein écran** avec verrouillage de l'interface
-- **Animation ASCII** d'un crâne en 4 frames
-- **Compte à rebours** dramatique (configurable)
-- **Effets visuels** : clignotement, scan-lines, dégradés
-- **QR Code** pour simuler une demande de rançon
-- **Alarmes sonores** périodiques
-
-### 📊 Collecte de Données
-
-| Type de données | Description |
+| Fonctionnalité | Description |
 |----------------|-------------|
-| 🔤 **Keylogger** | Enregistrement des frappes clavier |
-| 🖱️ **Tracking souris** | Mouvements et clics |
-| 💻 **Infos système** | Hostname, MAC, CPU, RAM |
-| 📋 **Processus** | Liste des applications actives |
+| **Statistiques en temps réel** | Nombre de machines infectées, pays impactés, total des logs |
+| **Graphiques dynamiques** | Logs par heure, répartition géographique, activité journalière |
+| **Connexions WebSocket** | Affichage des clients connectés en direct |
+| **Notifications toast** | Alertes pour chaque nouvelle victime détectée |
 
-### 🌐 Communication Réseau
+### 🗺️ Carte mondiale interactive
 
-```json
-{
-  "ip": "193.168.5.77",
-  "hostname": "WORKSTATION-01",
-  "country": "France",
-  "mac": "AA:BB:CC:DD:EE:FF",
-  "timestamp": "2025-01-07T10:30:00Z",
-  "keystrokes": ["ctrl", "alt", "del", "enter"]
-}
-```
+- Géolocalisation des victimes via **Leaflet.js** et **IP-API**
+- Popups détaillés : IP, hostname, pays, ville
+- Mise à jour en temps réel des nouvelles infections
 
-### 📝 Journalisation
+### 👥 Gestion des clients
 
-- Logs détaillés dans `ransomware_logs.txt`
-- Export JSON dans `dashboard_data.json`
-- Buffer de logs en mémoire pour analyse temps réel
+- **Table des victimes** : IP, hostname, pays, adresse MAC, timestamp
+- **Replay des sessions** : Historique complet des frappes clavier
+- **Reconstruction des saisies** : Analyse du comportement utilisateur
+
+### 🔐 Système d'authentification
+
+- Login sécurisé avec **bcrypt**
+- Protection contre le brute-force via **rate limiting**
+- Gestion des sessions utilisateur
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture technique
+
+### Stack technologique
+
+**Frontend:**
+- React.js 18.x - Framework SPA
+- Recharts - Graphiques statistiques  
+- Leaflet - Cartographie interactive
+- Socket.io-client - Communication temps réel
+
+**Backend:**
+- Node.js / Express - Serveur API
+- Socket.io - WebSocket server
+- bcrypt - Hachage des mots de passe
+- express-rate-limit - Protection anti brute-force
+
+**Stockage:**
+- JSON files - Base de données légère
+- Système de fichiers local - Logs et données
+
+### Structure des dossiers
 
 ```
-┌─────────────────────────────────────────────┐
-│          Interface Graphique (GUI)          │
-├─────────────────────────────────────────────┤
-│  ┌───────────┐  ┌───────────┐  ┌─────────┐ │
-│  │ Animation │  │  Timer    │  │  Audio  │ │
-│  │  Engine   │  │  System   │  │ Alerts  │ │
-│  └───────────┘  └───────────┘  └─────────┘ │
-├─────────────────────────────────────────────┤
-│           Modules de Collecte               │
-│  ┌───────────┐  ┌───────────┐  ┌─────────┐ │
-│  │ Keylogger │  │  System   │  │ Network │ │
-│  │   Hook    │  │   Info    │  │  Comms  │ │
-│  └───────────┘  └───────────┘  └─────────┘ │
-├─────────────────────────────────────────────┤
-│             Système de Logs                 │
-└─────────────────────────────────────────────┘
+wire-dolphin-dashboard/
+├── backend/
+│   ├── server.js           # Serveur Express principal
+│   ├── secure-data/        # Données sensibles
+│   │   ├── users.json      # Utilisateurs (hashés)
+│   │   └── data.json       # Données des victimes
+│   └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # Composants React
+│   │   ├── pages/          # Pages de l'application
+│   │   └── App.js
+│   └── package.json
+└── README.md
 ```
 
 ---
@@ -110,143 +117,200 @@ Le **Ransomware Simulator** est un outil pédagogique développé par Orange Cyb
 
 ### Prérequis
 
-- **OS** : Windows 10/11
-- **Compilateur** : MinGW, MSVC ou compatible
-- **Bibliothèques** : Windows SDK standard
+- Node.js >= 14.x
+- npm ou yarn
+- Debian/Ubuntu (pour la production)
 
-### Compilation
+### Installation locale
 
-#### Option 1 : MinGW
+1. **Cloner le repository**
+```bash
+git clone https://github.com/orange-cyberdefense/wire-dolphin-dashboard.git
+cd wire-dolphin-dashboard
+```
+
+2. **Installer les dépendances backend**
+```bash
+cd backend
+npm install
+```
+
+3. **Installer les dépendances frontend**
+```bash
+cd ../frontend
+npm install
+```
+
+4. **Créer les fichiers de configuration**
+```bash
+# Dans backend/secure-data/
+touch users.json data.json
+```
+
+5. **Initialiser users.json**
+```json
+[
+  {
+    "username": "admin",
+    "password": "$2b$10$..." // Hash bcrypt du mot de passe
+  }
+]
+```
+
+### Déploiement sur VM Debian
 
 ```bash
-gcc simulateur.c -o ransomware_sim.exe -lwininet -lws2_32 -lwinmm -lrpcrt4 -liphlpapi -mwindows
+# 1. Installer Node.js et npm
+sudo apt update
+sudo apt install nodejs npm
+
+# 2. Transférer le projet via SCP
+scp -r wire-dolphin-dashboard/ user@192.168.x.x:/home/user/
+
+# 3. Sur la VM
+cd wire-dolphin-dashboard
+npm install # Dans backend/ et frontend/
+
+# 4. Build du frontend
+cd frontend
+npm run build
+
+# 5. Lancer le serveur
+cd ../backend
+node server.js
 ```
 
-#### Option 2 : Visual Studio
+---
 
-```cmd
-cl simulateur.c /Fe:ransomware_sim.exe /link wininet.lib ws2_32.lib winmm.lib rpcrt4.lib iphlpapi.lib user32.lib gdi32.lib
+## ⚙️ Configuration
+
+### Variables d'environnement
+
+Créer un fichier `.env` dans le dossier backend :
+
+```env
+PORT=3001
+JWT_SECRET=votre_secret_jwt
+RATE_LIMIT_WINDOW=60000
+RATE_LIMIT_MAX=5
 ```
 
-#### Option 3 : Mode Debug
+### Configuration réseau
 
-```bash
-gcc simulateur.c -o ransomware_sim_debug.exe -D_DEBUG -lwininet -lws2_32 -lwinmm -lrpcrt4 -liphlpapi -mwindows
+Le dashboard est accessible sur :
 ```
-
-### Fichiers requis
-
-| Fichier | Description | Obligatoire |
-|---------|-------------|-------------|
-| `simulateur.c` | Code source principal | ✅ |
-| `qr.bmp` | QR code pour la rançon | ✅ |
-| `alarm.wav` | Son d'alarme | ❌ |
+http://192.168.240.249:3001
+```
 
 ---
 
 ## 📖 Utilisation
 
-### Démarrage
+### Connexion
 
-1. **Préparer l'environnement** : Placer tous les fichiers dans le même dossier
-2. **Configurer le dashboard** : S'assurer que le serveur écoute sur `192.168.240.249:3001`
-3. **Lancer le simulateur** : Double-cliquer sur `ransomware_sim.exe`
+1. Accéder à l'interface : `http://192.168.240.249:3001`
+2. Se connecter avec les identifiants fournis
+3. Navigation via la barre supérieure
 
-### Contrôles
+### Sections principales
 
-| Touche | Action |
-|--------|--------|
-| `ESC` | Quitter le simulateur |
-| `F12` | Sortie alternative |
+- **Dashboard** : Vue d'ensemble et statistiques
+- **Carte** : Localisation géographique des victimes
+- **Clients** : Détails des machines infectées
+- **Logs** : Historique complet des événements
+- **Paramètres** : Configuration du dashboard
 
-### Mode Debug
+### Réception des données
 
-En mode debug, vous aurez accès à :
-- 📊 Logs en temps réel à l'écran
-- 🔍 Messages de débogage détaillés
-- ℹ️ Instructions de sortie visibles
+Le simulateur envoie les données au format JSON :
+
+```json
+{
+  "ip": "193.168.5.77",
+  "hostname": "VICTIM-001",
+  "country": "France",
+  "mac": "AA:BB:CC:DD:EE:FF",
+  "timestamp": "2025-06-26T10:30:00Z",
+  "keystrokes": ["ctrl", "alt", "del", "enter"]
+}
+```
 
 ---
 
-## 🔧 Intégration Orange Cyberdefense
+## 🔌 API Endpoints
 
-### Écosystème de formation
+| Endpoint | Méthode | Description |
+|----------|---------|-------------|
+| `/api/login` | POST | Authentification utilisateur |
+| `/api/data` | POST | Réception des données malware |
+| `/api/victims` | GET | Liste des victimes |
+| `/api/logs` | GET | Historique des logs |
+| `/api/stats` | GET | Statistiques globales |
 
-```mermaid
-graph LR
-    A[Simulateur Ransomware] --> B[Dashboard Monitoring]
-    B --> C[Plateforme d'Analyse]
-    C --> D[Rapports d'Incidents]
-    D --> E[Formation & Feedback]
-```
+### WebSocket Events
 
-### Scénarios d'utilisation
-
-1. **Formation initiale** : Découverte des ransomwares
-2. **Exercices Blue Team** : Détection et containment
-3. **Simulations Red Team** : Tests d'intrusion
-4. **Sensibilisation** : Démonstrations pour dirigeants
-
-### Dashboard de monitoring
-
-Le simulateur communique avec un dashboard centralisé permettant :
-- 📈 Visualisation en temps réel des attaques
-- 🗺️ Cartographie des infections
-- 📊 Analyse comportementale
-- 🔔 Alertes automatisées
+- `connection` : Nouvelle connexion client
+- `victim-data` : Données d'une victime
+- `new-victim` : Notification nouvelle infection
+- `disconnect` : Déconnexion client
 
 ---
 
 ## 🔒 Sécurité
 
-### Mesures de protection
+### Mesures implémentées
 
-- ✅ **Aucun chiffrement réel** de fichiers
-- ✅ **Touches d'échappement** toujours actives
-- ✅ **Communication** uniquement vers serveur de test
-- ✅ **Code source** transparent et auditable
-- ✅ **Logs complets** de toutes les actions
+- ✅ **Authentification bcrypt** avec salt rounds = 10
+- ✅ **Rate limiting** : 5 tentatives par minute
+- ✅ **Validation des données** entrantes
+- ✅ **Stockage sécurisé** dans `/secure-data`
+- ✅ **CORS configuré** pour les domaines autorisés
+- ✅ **Pas de base de données externe** (plus discret)
 
-### Conformité
+### Protection contre les attaques
 
-- Conforme aux standards Orange Cyberdefense
-- Respecte les réglementations sur la formation en cybersécurité
-- Approuvé pour usage en environnement contrôlé
-
----
-
-## ❓ FAQ
-
-<details>
-<summary><strong>Le simulateur peut-il endommager mon système ?</strong></summary>
-
-Non. Le simulateur ne modifie, ne supprime ni ne chiffre aucun fichier. Il simule uniquement l'interface visuelle et collecte des données de démonstration.
-</details>
-
-<details>
-<summary><strong>Puis-je utiliser ce code pour mes propres formations ?</strong></summary>
-
-L'utilisation est restreinte aux formations Orange Cyberdefense. Pour toute autre utilisation, contactez l'équipe légale d'Orange Cyberdefense.
-</details>
-
-<details>
-<summary><strong>Comment personnaliser le simulateur ?</strong></summary>
-
-Les paramètres principaux (IP serveur, durée, etc.) sont définis dans le code source. Modifiez les constantes au début du fichier pour adapter le comportement.
-</details>
-
-<details>
-<summary><strong>Que faire si le simulateur ne se ferme pas ?</strong></summary>
-
-Redemarrer son PC. Car le Ctrl + Alt + Supp est bloqué en second plan.
-</details>
+```javascript
+// Rate limiter configuration
+const loginLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 5,
+  message: "Trop de tentatives, réessayez plus tard."
+});
+```
 
 ---
+
+## 🛠️ Développement
+
+### Lancer en mode développement
+
+```bash
+# Terminal 1 - Backend
+cd backend
+npm run dev
+
+# Terminal 2 - Frontend
+cd frontend
+npm start
+```
+
+### Build de production
+
+```bash
+cd frontend
+npm run build
+```
+
+### Tests
+
+```bash
+npm test
+```
 
 ---
 
 <p align="center">
-  <strong>Orange Cyberdefense / Bachelor Cyber Securité ISEN</strong><br>
-  <em>Votre partenaire de confiance en cybersécurité</em><br><br>
+  <strong>Orange Cyberdefense - ISEN Méditerranée</strong><br>
+  <em>Former aujourd'hui les experts cyber de demain</em><br><br>
   <sub>© 2025 Grep2Raisin - Tous droits réservés</sub>
 </p>
